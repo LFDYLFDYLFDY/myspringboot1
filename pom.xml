@@ -75,6 +75,13 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>3.3.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5 -->
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -82,6 +89,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>5.2.4</version>
+				<configuration>
+					<url>jdbc:postgresql://localhost:5432/postgres?currentSchema=boot</url>
+					<user>postgres</user>
+					<password>admin</password>
+					<schemas>
+						<schema>boot</schema>
+					</schemas>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
