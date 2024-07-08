@@ -10,4 +10,5 @@ public class Myspringboot1Application {
 		SpringApplication.run(Myspringboot1Application.class, args);
 	}
 
+
 }
