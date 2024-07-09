@@ -32,7 +32,7 @@ public class MainController {
    @GetMapping("/cats")
    @ResponseBody
      public Cat catRequest(){
-        return new Cat(1L,"bob");
+        return new Cat(1L,"bob","black");
 //return "hello";
     }
     @GetMapping("/form")
@@ -48,5 +48,21 @@ public String formRequest(){
         System.out.println(email);
         return "redirect:/index";
 
+    }
+    @GetMapping("/addcat")
+    public String addCat(Model model){
+//        model.addAttribute("cat", new Cat());
+        Cat cat = new Cat(1L,"bob","black");
+        model.addAttribute("cat",cat);
+        return "cat_form";
+    }
+
+    @PostMapping("/addcat")
+    public String saveCat(
+           @ModelAttribute(value = "cat") Cat cat)
+    {
+
+        System.out.println(cat.getId()+" "+cat.getName()+ " "+ cat.getColor());
+         return "redirect:/index";
     }
 }
