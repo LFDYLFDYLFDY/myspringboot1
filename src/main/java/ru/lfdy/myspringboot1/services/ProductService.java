@@ -8,12 +8,12 @@ import ru.lfdy.myspringboot1.repositories.ProductRepository;
 import java.util.List;
 
 
-
+@Service
 public class ProductService {
 
 
-    @Service
-    public class ProductsService {
+
+
         private ProductRepository productRepository;
 
         @Autowired
@@ -34,4 +34,4 @@ public class ProductService {
         }
     }
 
-}
+
