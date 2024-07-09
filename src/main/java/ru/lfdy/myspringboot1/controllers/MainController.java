@@ -2,10 +2,7 @@ package ru.lfdy.myspringboot1.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -38,5 +35,18 @@ public class MainController {
         return new Cat(1L,"bob");
 //return "hello";
     }
+    @GetMapping("/form")
+public String formRequest(){
+        return "simple_form";
 
+
+    }
+    @PostMapping("/form")
+    public String saveForm(@RequestParam(value = "name") String name,
+                           @RequestParam(value = "email") String email){
+        System.out.println(name);
+        System.out.println(email);
+        return "redirect:/index";
+
+    }
 }
