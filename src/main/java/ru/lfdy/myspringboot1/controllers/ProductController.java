@@ -3,10 +3,7 @@ package ru.lfdy.myspringboot1.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.lfdy.myspringboot1.entities.Product;
 import ru.lfdy.myspringboot1.services.ProductService;
 
@@ -51,8 +48,12 @@ Product product = new Product();
     }
 
 
-    @GetMapping("edit/{id}")
-    public String editProduct() {
-        return "1";
-    }
+    @GetMapping("/show/{id}")
+
+    public String showOneProduct(Model model, @PathVariable(value = "id") Long id) {
+            Product product = productService.getById(id);
+            model.addAttribute("product", product);
+            return "product-page";
+
+        }
 }
