@@ -1,13 +1,14 @@
 package ru.lfdy.myspringboot1.repositories;
 
-//import javax.persistence.*;
+
+//import jakarta.persistence.*;
 //
 //@Entity
 //@Table(name="items")
-public class Item {
+//public class Item {
 //    @Id
 //            @GeneratedValue
-//            @Column (name = "id")
+//            @Column(name = "id")
 //    private  Long id;
 //    @Column(name = "title")
 //    private  String title;
@@ -19,5 +20,5 @@ public class Item {
 //        this.id = id;
 //        this.title = title;
 //    }
-
-}
+//
+//}
