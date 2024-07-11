@@ -1,6 +1,7 @@
 package ru.lfdy.myspringboot1.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import ru.lfdy.myspringboot1.entities.Product;
 import ru.lfdy.myspringboot1.repositories.ProductRepository;
@@ -26,7 +27,7 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
-
+// @Secured(value = "ADMIN")
     public void add(Product product) {
         productRepository.save(product);
     }
