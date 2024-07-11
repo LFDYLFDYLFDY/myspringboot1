@@ -7,6 +7,7 @@ import ru.lfdy.myspringboot1.entities.Product;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -36,5 +37,15 @@ public class ProductRepository {
     public void save(Product product) {
         products.add(product);
     }
-}
 
+    public void deleteById(Long id) {
+        Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getId().equals(id)) {
+                iterator.remove();
+                return;
+            }
+        }
+    }
+}

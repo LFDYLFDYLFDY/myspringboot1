@@ -42,9 +42,12 @@ Product product = new Product();
         return "1";
     }
 
-    @GetMapping("/remove/{id}")
-    public String removeProduct() {
-        return "1";
+    @GetMapping("/delete/{id}")
+    public String deleteProduct( @PathVariable(value = "id") Long id) {
+        Product product = productService.getById(id);
+//        model.addAttribute("product", product);
+productService.deleteByID(id);
+        return "redirect:/products";
     }
 
 

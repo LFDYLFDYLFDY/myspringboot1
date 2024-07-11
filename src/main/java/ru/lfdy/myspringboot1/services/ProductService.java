@@ -12,26 +12,28 @@ import java.util.List;
 public class ProductService {
 
 
+    private ProductRepository productRepository;
 
-
-        private ProductRepository productRepository;
-
-        @Autowired
-        public void setProductRepository(ProductRepository productRepository) {
-            this.productRepository = productRepository;
-        }
-
-        public Product getById(Long id) {
-            return productRepository.findById(id);
-        }
-
-        public List<Product> getAllProducts() {
-            return productRepository.findAll();
-        }
-
-        public void add(Product product) {
-            productRepository.save(product);
-        }
+    @Autowired
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
+
+    public Product getById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
+
+    public void add(Product product) {
+        productRepository.save(product);
+    }
+
+    public void deleteByID(Long id) {
+        productRepository.deleteById(id);
+    }
+}
 
 
