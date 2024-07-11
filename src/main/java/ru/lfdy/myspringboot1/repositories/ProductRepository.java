@@ -1,7 +1,7 @@
 package ru.lfdy.myspringboot1.repositories;
 
 
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import ru.lfdy.myspringboot1.entities.Product;
 
