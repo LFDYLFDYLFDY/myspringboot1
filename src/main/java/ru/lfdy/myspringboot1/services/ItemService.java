@@ -21,6 +21,7 @@ public class ItemService {
     public List<Item> getAllItems() {
 //        List<Item> items = new ArrayList<Item>();
         System.out.println(itemRepository.findByTitle("Box"));
+        System.out.println(itemRepository.findByCostBetween(40,60));
 
         return itemRepository.findAll();
     }
