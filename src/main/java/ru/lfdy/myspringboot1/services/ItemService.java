@@ -22,6 +22,10 @@ public class ItemService {
 //        List<Item> items = new ArrayList<Item>();
         System.out.println(itemRepository.findByTitle("Box"));
         System.out.println(itemRepository.findByCostBetween(40,60));
+//        System.out.println(itemRepository.findByCostOrderByTitle(40,80));
+        System.out.println(itemRepository.myMethodName());
+
+
 
         return itemRepository.findAll();
     }
