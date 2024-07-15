@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-//@RequestMapping("/items")
+@RequestMapping("/items")
 public class ItemsController {
     private ItemService itemService;
 
@@ -20,7 +20,7 @@ public class ItemsController {
         this.itemService = itemService;
     }
 //    @RequestMapping("/items")
-@GetMapping("/items")
+@GetMapping
 
     public String showItemsPage(Model model) {
         model.addAttribute("items", itemService.getAllItems());
