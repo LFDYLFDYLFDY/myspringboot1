@@ -15,5 +15,8 @@ public interface ItemRepository extends JpaRepository <Item, Long> {
 //   List <Item> findByCostOrderByTitle (int min, int max);
    @Query(value = "select i  from Item i" )
    List<Item> myMethodName();
+   @Query(value = "SELECT i FROM Item  i where  i.title like %?1")
+   List<Item> findByTitleEndingWith(String substring);
+
 
 }

@@ -24,7 +24,7 @@ public class ItemService {
         System.out.println(itemRepository.findByCostBetween(40,60));
 //        System.out.println(itemRepository.findByCostOrderByTitle(40,80));
         System.out.println(itemRepository.myMethodName());
-
+        System.out.println(itemRepository.findByTitleEndingWith("e"));
 
 
         return itemRepository.findAll();
