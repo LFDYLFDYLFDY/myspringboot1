@@ -7,5 +7,6 @@ import ru.lfdy.myspringboot1.entities.Item;
 @Repository
 public interface ItemRepository extends JpaRepository <Item, Long> {
 
+   Item findByTitle (String title);
 
 }

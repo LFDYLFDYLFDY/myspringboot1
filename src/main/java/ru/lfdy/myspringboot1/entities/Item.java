@@ -39,4 +39,13 @@ public class Item {
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public String toString() {
+//        return "Item{" +
+//                "id=" + id +
+//                ", title='" + title + '\'' +
+//                '}';
+    return String.format("Item [%d   %s]", id, title);
+    }
 }

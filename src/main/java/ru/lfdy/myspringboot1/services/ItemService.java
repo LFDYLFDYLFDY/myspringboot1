@@ -20,6 +20,8 @@ public class ItemService {
 
     public List<Item> getAllItems() {
 //        List<Item> items = new ArrayList<Item>();
+        System.out.println(itemRepository.findByTitle("Box"));
+
         return itemRepository.findAll();
     }
 }
