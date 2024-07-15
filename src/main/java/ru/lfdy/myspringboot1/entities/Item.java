@@ -1,8 +1,5 @@
-package ru.lfdy.myspringboot1.repositories;
+package ru.lfdy.myspringboot1.entities;
 
-
-import org.springframework.data.annotation.*;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 
@@ -10,13 +7,14 @@ import javax.persistence.*;
 @Entity
 @Table(name="items")
 public class Item {
-    @javax.persistence.Id
     @Id
+    @Column(name = "id")
+
 //            @GeneratedValue
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-            @Column(name = "id")
     private  Long id;
-    @Column(name = "title")
+
+    @Column
     private  String title;
 
     public Item() {
@@ -33,5 +31,12 @@ public class Item {
 
     public Long getId() {
         return id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getTitle() {
+        return title;
     }
 }
