@@ -4,9 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.lfdy.myspringboot1.entities.Item;
 
+import java.util.List;
+
 @Repository
 public interface ItemRepository extends JpaRepository <Item, Long> {
 
    Item findByTitle (String title);
+   List <Item> findByCostBetween(int min, int max);
 
 }

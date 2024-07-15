@@ -17,6 +17,9 @@ public class Item {
     @Column
     private  String title;
 
+    @Column(name = "cost")
+    private int cost;
+
     public Item() {
     }
 
@@ -40,12 +43,20 @@ public class Item {
         return title;
     }
 
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
     @Override
     public String toString() {
 //        return "Item{" +
 //                "id=" + id +
 //                ", title='" + title + '\'' +
 //                '}';
-    return String.format("Item [%d   %s]", id, title);
+    return String.format("Item [id= %d   title = %s cost = %d]", id, title,cost);
     }
 }
